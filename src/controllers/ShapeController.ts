@@ -49,6 +49,7 @@ export class ShapeController {
     setInterval(this.spawnRandom, 1000.0);
 
     this.engineApp.stage.on("pointerdown", this.createShapeAtPos);
+    this.engineApp.ticker.add(this.fallDown);
   }
 
   @Autobind
