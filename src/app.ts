@@ -7,31 +7,31 @@ import { IntervalController } from "./controllers/IntervalController";
 import { AreaTotalController } from "./controllers/AreaTotalController";
 import { ShapesTotalController } from "./controllers/ShapesTotalController";
 
-const engine = new Engine({
-  containerId: "game",
-  app: {
-    backgroundColor: 0xcccccc,
-  },
-});
-
 window.onload = create;
 
 function create() {
-  // Gravity controller
+  const engine = new Engine({
+    containerId: "game",
+    app: {
+      backgroundColor: 0xcccccc,
+    },
+  });
+
+  // Gravity
   const gravityModel = new ValueModel(2);
   const gravityView = new ValueView(
     "gravityValue",
     gravityModel.getValue().toString()
   );
 
-  // Interval controller
+  // Interval
   const intervalModel = new ValueModel(4);
   const intervalView = new ValueView(
     "intervalValue",
     intervalModel.getValue().toString()
   );
 
-  // Area total controller
+  // Area total
   const areaTotalModel = new ValueModel(0);
   const areaTotalView = new ValueView(
     "areaTotal",
@@ -42,7 +42,7 @@ function create() {
     areaTotalModel
   );
 
-  // Number of shapes controller
+  // Number of shapes
   const shapesTotalModel = new ValueModel(0);
   const shapesTotalView = new ValueView(
     "shapesTotal",
